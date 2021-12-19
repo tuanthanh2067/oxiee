@@ -64,7 +64,8 @@ export default {
   flex-direction: column;
 }
 
-.information .text {
+.information .text,
+.information .link {
   max-width: 400px;
   text-align: center;
 }
@@ -92,7 +93,7 @@ export default {
   justify-content: space-around;
 }
 
-.illustration img {
+.information .link .illustration img {
   width: 100%;
   height: 100%;
 }

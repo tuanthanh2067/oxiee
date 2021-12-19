@@ -3,6 +3,7 @@
     <div class="section left-section">
       <Logo />
       <router-link to="/products">Products</router-link>
+      <router-link to="/Contact">Contact us</router-link>
       <router-link to="/about">About us</router-link>
     </div>
     <div class="section right-section">

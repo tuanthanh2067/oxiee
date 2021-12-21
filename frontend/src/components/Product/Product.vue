@@ -1,14 +1,12 @@
 <template>
-  <div class="product">
+  <div :class="align === 'right' && 'product-reverse'" class="product">
     <div class="section information">
       <div class="text">
-        <h5>New</h5>
-        <h1>Work Schedule</h1>
+        <h5>{{ isNew ? "New" : "" }}</h5>
+        <h1>{{ name }}</h1>
 
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-          minima incidunt voluptatem omnis modi, labore voluptate illum quia
-          totam. Nemo?
+          {{ description }}
         </p>
       </div>
 
@@ -18,26 +16,27 @@
       </div>
     </div>
     <div class="section illustration">
-      <img :src="Schedule" alt="schedule" />
+      <img :src="illustration" :alt="name" />
     </div>
   </div>
 </template>
 
 <script>
-import Schedule from "@/assets/schedule.svg";
 import ContactUs from "@/components/utils/ContactUs.vue";
 
 export default {
   name: "Product",
 
-  data() {
-    return {
-      Schedule: Schedule,
-    };
-  },
-
   components: {
     ContactUs: ContactUs,
+  },
+
+  props: {
+    isNew: Boolean,
+    name: String,
+    description: String,
+    align: String,
+    illustration: String,
   },
 };
 </script>
@@ -51,6 +50,10 @@ export default {
 
   border-radius: 16px;
   box-shadow: 1px 1px 5px rgb(185, 185, 185);
+}
+
+.product-reverse {
+  flex-direction: row-reverse;
 }
 
 .section {
@@ -93,7 +96,7 @@ export default {
   justify-content: space-around;
 }
 
-.information .link .illustration img {
+.illustration img {
   width: 100%;
   height: 100%;
 }

@@ -4,18 +4,40 @@
     <h3>Our products and services...</h3>
   </div>
 
-  <div class="products">
-    <Product />
+  <div
+    v-for="productItem in productsList"
+    :key="productItem.id"
+    class="products"
+  >
+    <Product
+      :isNew="productItem.isNew"
+      :name="productItem.name"
+      :description="productItem.description"
+      :align="productItem.align"
+      :illustration="productItem.illustration"
+    />
   </div>
 </template>
 
 <script>
 import Product from "@/components/Product/Product.vue";
+import { getProducts } from "@/products";
 
 export default {
   name: "Products",
+
+  data() {
+    return {
+      productsList: [],
+    };
+  },
+
   components: {
     Product,
+  },
+
+  created() {
+    this.productsList = getProducts().products;
   },
 };
 </script>

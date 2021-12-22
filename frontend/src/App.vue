@@ -26,6 +26,9 @@ export default {
 :root {
   --darkBlueColor: #5680e9;
   --darkOrangeColor: #e27d60;
+  --darkPurpleColor: #3e1f93;
+
+  --lightPinkColor: #fa949d;
 }
 
 #app {

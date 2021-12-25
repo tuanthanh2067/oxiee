@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <Navbar />
+    <Navbar v-if="show" />
     <router-view></router-view>
-    <Footer />
+    <Footer v-if="show" />
   </div>
 </template>
 
@@ -15,6 +15,12 @@ export default {
   components: {
     Navbar,
     Footer,
+  },
+
+  computed: {
+    show() {
+      return this.$route.name !== "Login" && this.$route.name !== "Signup";
+    },
   },
 };
 </script>

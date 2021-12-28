@@ -1,0 +1,13 @@
+{
+  "name": "oxiee",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Dustin Tan",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

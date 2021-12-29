@@ -77,7 +77,7 @@ const employeeStatusAtCompanySchema = new Schema({
   employeeId: {
     type: String,
   },
-  restaurantId: {
+  companyBranchId: {
     type: String,
   },
   dateOfHire: {
